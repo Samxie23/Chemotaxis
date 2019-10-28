@@ -13,7 +13,11 @@
  	for(int i = 0; i < ball.length; i++){
  		ball[i].show();
  		ball[i].walk();
+ 	
+ 	if(dist(ball[i].myX,ball[i].myY,mouseX,mouseY) < 30){
+ 		ball[i].myColor = color((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, (int)(Math.random()*255)+1);
  	}
+ }
  }  
  class Bacteria    
  {     
@@ -24,23 +28,17 @@
  	myColor = color((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, (int)(Math.random()*255)+1);
  	}
  	void walk(){
- 		if(mouseX > 250){
+ 		if(mouseX > myX){
  			myX = myX + (int)(Math.random() * 5)-1;
  		}
- 		else if(mouseX < 250){
- 			myX = myX + (int)(Math.random() * 6)-2;	
- 		}
  		else{
- 			myX = myX + (int)(Math.random() * 8)-1;
+ 			myX = myX + (int)(Math.random() * 5)-4;
  		}
  		if(mouseY > 250){
- 			myY = myY + (int)(Math.random() * 5)-2;
- 		}
- 		else if(mouseY < 250){
- 			myY = myY + (int)(Math.random() * 6)-1;	
+ 			myY = myY + (int)(Math.random() * 5)-1;
  		}
  		else{
- 			myY = myY + (int)(Math.random() * 8)-2;
+ 			myY = myY + (int)(Math.random() * 5)-4;
  	}   
  }   
  	void show(){
